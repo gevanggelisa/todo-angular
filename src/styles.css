@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .customButton {
+    background-color: theme('colors.cyan.300');
+    padding: theme('spacing.2');
+    font-weight: theme('fontWeight.semibold');
+    border-radius: theme('borderRadius.md');
+    box-shadow: theme('boxShadow.lg');
+  }
+  .customButton:hover {
+    background-color: theme('colors.cyan.400');
+  }
+  /* ... */
+}
