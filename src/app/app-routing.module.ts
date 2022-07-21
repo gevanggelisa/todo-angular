@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodoComponent } from './todo/todo.component';
+// import { TodoComponent } from './modules/todo-list/todo.component';
 
 const routes: Routes = [
-  {path: '', component: TodoComponent}
+  {
+    path: '',
+    loadChildren: () => import('./modules/layout/layout.module').then((m) => m.LayoutModule),
+  },
 ];
 
 @NgModule({
