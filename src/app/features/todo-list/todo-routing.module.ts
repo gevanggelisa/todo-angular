@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './todo.component';
-// import { NftComponent } from './pages/nft/nft.component';
 
 const routes: Routes = [
   {
@@ -10,8 +9,6 @@ const routes: Routes = [
     children: [],
   },
 ];
-
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

@@ -1,0 +1,51 @@
+<div class="flex flex-wrap">
+  <div class="itemContainer">
+    <div class="border-dashed border-mercury border-2 rounded-sm p-4 bg-white">
+      <div class="flex items-center justify-between pb-2">
+        To Do ({{todoTotal | async }})
+        <app-modal></app-modal>
+      </div>
+      <div *ngIf="todoTotal">
+        <div *ngFor="let todo of todos | async">
+          <div *ngIf="todo.status === 'todo'">
+            <app-item [item]="todo" [status]="'inprogress'"></app-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itemContainer">
+    <!-- Column Content -->
+    <div class="border-dashed border-mercury border-2 rounded-sm p-4 bg-white">
+      <div class="flex justify-between pb-2">
+          In Progress (0)
+        <!-- <app-modal></app-modal> -->
+      </div>
+      <div *ngIf="todoTotal">
+        <div *ngFor="let todo of todos | async">
+          <div *ngIf="todo.status === 'inprogress'">
+            <app-item [item]="todo" [status]="'completed'"></app-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="itemContainer">
+    <!-- Column Content -->
+    <div class="border-dashed border-mercury border-2 rounded-sm p-4 bg-white">
+      <div class="flex justify-between pb-2">
+        Completed (0)
+        <!-- <app-modal></app-modal> -->
+      </div>
+      <div *ngIf="todoTotal">
+        <div *ngFor="let todo of todos | async">
+          <div *ngIf="todo.status === 'completed'">
+            <app-item [item]="todo" [displayCheck]="false"></app-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
-// import { TodoComponent } from './modules/todo-list/todo.component';
 @NgModule({
   declarations: [
     NavbarComponent,

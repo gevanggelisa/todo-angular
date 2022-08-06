@@ -5,11 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { TodoRoutingModule } from './todo-routing.module';
 import { TodoComponent } from './todo.component';
+import { ItemComponent } from './components/item/item.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    ItemComponent,
     TodoComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
