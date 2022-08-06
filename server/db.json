@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "test@mail.com",
+      "password": "test",
+      "id": "1"
+    }
+  ],
+  "signin": {
+    "accessToken": "ghJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+  },
+  "error": {
+    "message": "User not found"
+  },
+  "profile": {
+    "email": "test@mail.com",
+    "name": "Test"
+  }
+}

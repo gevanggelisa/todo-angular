@@ -7,30 +7,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 // import { TodoComponent } from './modules/todo-list/todo.component';
 import { StoreModule } from '@ngrx/store';
-import { myStore } from './store';
+// import { myStore } from './store';
 import { FormsModule } from '@angular/forms';
-// import { NavbarComponent } from './layouts/navbar/navbar.component';
-// import { FooterComponent } from './modules/layout/footer/footer.component';
-// import { LayoutComponent } from './modules/layout/layout.component';
+import { reducers, metaReducers } from './store';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { CoreModule } from './services/core.module';
+import { HttpClientModule } from '@angular/common/http';
+// import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // TodoComponent,
-    // NavbarComponent,
-    // FooterComponent,
-    // LayoutComponent,
   ],
   imports: [
     BrowserModule,
-    CommonModule,
+    HttpClientModule,
+    CoreModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    // SharedModule.forRoot(),
     FormsModule,
-    StoreModule.forRoot({}, {}),
-    myStore,
+    // StoreModule.forRoot(reducers, { metaReducers }),
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

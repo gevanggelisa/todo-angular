@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "server": "json-server server/db.json --watch",
+    "server-auth": "json-server server/db.json -m ./node_modules/json-server-auth -r server/routes.json"
   },
   "private": true,
   "dependencies": {
@@ -18,9 +20,18 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@ngrx/effects": "^13.2.0",
+    "@ngrx/entity": "^13.2.0",
+    "@ngrx/router-store": "^13.2.0",
+    "@ngrx/schematics": "^13.2.0",
     "@ngrx/store": "^13.2.0",
+    "@ngrx/store-devtools": "^13.2.0",
+    "@types/uuid": "^8.3.4",
+    "json-server": "^0.17.0",
+    "json-server-auth": "^2.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-// import { TodoComponent } from './modules/todo-list/todo.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () => import('./modules/layout/layout.module').then((m) => m.LayoutModule),
+    path: 'login',
+    loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule),
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./features/layout/layout.module').then((m) => m.LayoutModule),
+    canActivate: [AuthGuard],
+  },
+  { path: '**', redirectTo: 'login' },
 ];
 
 @NgModule({
